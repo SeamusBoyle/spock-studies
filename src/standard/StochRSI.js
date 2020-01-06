@@ -54,11 +54,11 @@ obj.exec = function (period) {
   }
 
   if (period === obj._rsiPeriods.value) {
-    var prices = Plot.getTicks(period, obj._rsiPeriods.value);
+    const prices = Plot.getTicks(period, obj._rsiPeriods.value);
     let gains = 0;
     let losses = 0;
     for (let i = 1, total = prices.length; i < total; ++i) {
-      var change = prices[i - 1] - prices[i];
+      const change = prices[i - 1] - prices[i];
       if (change >= 0)
         gains += change;
       else
@@ -68,8 +68,8 @@ obj.exec = function (period) {
     obj._avgGain[period] = gains / obj._rsiPeriods.value;
     obj._avgLoss[period] = losses / obj._rsiPeriods.value;
   } else if (period > obj._rsiPeriods.value) {
-    var prices = Plot.getTicks(period, 2);
-    var change = prices[1] - prices[0];
+    const prices = Plot.getTicks(period, 2);
+    const change = prices[1] - prices[0];
     let gain = 0;
     let loss = 0;
     if (change >= 0)

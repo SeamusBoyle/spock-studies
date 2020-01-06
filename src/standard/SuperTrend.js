@@ -36,7 +36,7 @@ obj.info = function () {
   };
 };
 
-TrendDirection = Object.freeze({ Down: -1, None: 0, Up: 1 });
+const TrendDirection = Object.freeze({ Down: -1, None: 0, Up: 1 });
 
 obj.exec = function (period) {
   if (Plot.barUpdateMode === Spock.BarUpdateMode.AllBars) {
@@ -52,7 +52,7 @@ obj.exec = function (period) {
   if (period === 0) {
     obj._atr[0] = curHigh - curLow;
   } else {
-    var prevClose = Plot.close(period - 1);
+    const prevClose = Plot.close(period - 1);
 
     const method1 = curHigh - curLow;
     let method2 = curHigh - prevClose;
@@ -93,7 +93,7 @@ obj.exec = function (period) {
     return;
   }
 
-  var prevClose = Plot.close(period - 1);
+  const prevClose = Plot.close(period - 1);
 
   const priorUpper = obj._upper[period - 1];
   obj._upper[period] = prevClose < priorUpper ? Math.min(basicUpper, priorUpper) : basicUpper;

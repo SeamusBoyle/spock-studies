@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "eslint": "eslint --ignore-path .gitignore .",
+    "eslint": "eslint --ignore-path .gitignore --ignore-pattern '!typings/' . --ext .js,.jsx,.ts,.tsx",
     "eslint-fix": "npm run eslint -- --fix .",
     "rollup": "rollup -c",
     "rollup-watch": "npm run rollup -- --watch",

@@ -89,8 +89,6 @@ obj.exec = function (period) {
   const isRedBar = !isGreenBar && obj._ema[period] < obj._ema[period - 1] &&
     obj._hist[period] < obj._hist[period - 1];
 
-  const isBlueBar = !isGreenBar && !isRedBar;
-
   const ohlc = Plot.getOHLC(period);
   return [{
     value: ohlc,

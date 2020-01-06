@@ -1,9 +1,9 @@
-var obj = {
+const obj = {
   name: 'Donchian Channel'
-}
+};
 
 obj.info = function () {
-  obj.overlay = true
+  obj.overlay = true;
 
   obj.curves = [{
     title: 'Upper'
@@ -13,31 +13,29 @@ obj.info = function () {
     lineWidth: 1
   }, {
     title: 'Lower'
-  }]
+  }];
 
   obj._periods = {
     name: 'Periods',
     defaultValue: 20
-  }
+  };
 
-  obj.parameters = [obj._periods]
-  obj.requiredSource = Spock.RequiredSource.Bar
-}
+  obj.parameters = [obj._periods];
+  obj.requiredSource = Spock.RequiredSource.Bar;
+};
 
 obj.exec = function (period) {
-  var length = obj._periods.value
+  const length = obj._periods.value;
 
-  var highs = Plot.high(period, length)
-  if (highs == null) {
-    return
-  }
+  const highs = Plot.high(period, length);
+  if (highs == null)
+    return;
 
-  var lows = Plot.low(period, length)
-  if (lows == null) {
-    return
-  }
+  const lows = Plot.low(period, length);
+  if (lows == null)
+    return;
 
-  var high = Plot.max(highs, length)
-  var low = Plot.min(lows, length)
-  return [high, (high + low) / 2, low]
-}
+  const high = Plot.max(highs, length);
+  const low = Plot.min(lows, length);
+  return [high, (high + low) / 2, low];
+};

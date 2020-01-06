@@ -4,6 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "eslint": "eslint --ignore-path .gitignore .",
+    "eslint-fix": "npm run eslint -- --fix .",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -15,5 +17,12 @@
   "bugs": {
     "url": "https://github.com/SeamusBoyle/spock-studies/issues"
   },
-  "homepage": "https://github.com/SeamusBoyle/spock-studies#readme"
+  "homepage": "https://github.com/SeamusBoyle/spock-studies#readme",
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^2.14.0",
+    "@typescript-eslint/parser": "^2.14.0",
+    "eslint": "^6.8.0",
+    "typescript": "^3.7.4"
+  },
+  "dependencies": {}
 }

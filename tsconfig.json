@@ -1,6 +1,7 @@
 {
     "compilerOptions": {
         "allowJs": true,
+        "module": "es6",
         "outDir": "./build-es3",
         "rootDir": "./",
         "target": "es3",

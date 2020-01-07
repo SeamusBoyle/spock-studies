@@ -6,6 +6,8 @@
   "scripts": {
     "eslint": "eslint --ignore-path .gitignore .",
     "eslint-fix": "npm run eslint -- --fix .",
+    "rollup": "rollup -c",
+    "rollup-watch": "npm run rollup -- --watch",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -22,6 +24,9 @@
     "@typescript-eslint/eslint-plugin": "^2.14.0",
     "@typescript-eslint/parser": "^2.14.0",
     "eslint": "^6.8.0",
+    "glob": "^7.1.6",
+    "rollup": "^1.28.0",
+    "rollup-pluginutils": "^2.8.2",
     "typescript": "^3.7.4"
   },
   "dependencies": {}

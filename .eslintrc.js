@@ -30,6 +30,7 @@ module.exports = {
         'no-mixed-spaces-and-tabs': 'error',
         'no-multi-spaces': 'error',
         'no-multiple-empty-lines': ['error', { max: 1, maxEOF: 1 }],
+        'no-shadow': 'warn',
         'no-trailing-spaces': 'error',
         'no-var': 'error',
         'padded-blocks': ['error', 'never'],

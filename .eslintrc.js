@@ -4,7 +4,8 @@ module.exports = {
     },
     extends: [
         'eslint:recommended',
-        'plugin:@typescript-eslint/eslint-recommended'
+        'plugin:@typescript-eslint/eslint-recommended',
+        'plugin:@typescript-eslint/recommended'
     ],
     globals: {
         Atomics: 'readonly',
@@ -35,8 +36,6 @@ module.exports = {
         'prefer-const': 'error',
         'quote-props': ['error', 'as-needed'],
         quotes: ['error', 'single', {avoidEscape: true}],
-        '@typescript-eslint/adjacent-overload-signatures': 'error',
-        '@typescript-eslint/no-unused-vars': 'warn',
         semi: 'error',
     }
 };

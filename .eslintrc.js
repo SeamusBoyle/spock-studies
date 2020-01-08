@@ -37,6 +37,7 @@ module.exports = {
         'prefer-const': 'error',
         'quote-props': ['error', 'as-needed'],
         quotes: ['error', 'single', {avoidEscape: true}],
-        semi: 'error',
+        '@typescript-eslint/semi': 'error',
+        semi: 'off', // must be off; @typescript-eslint/semi
     }
 };

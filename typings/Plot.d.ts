@@ -1,9 +1,4 @@
 declare namespace Plot {
-  /**
-   * @deprecated
-   */
-  function bar(index: number): TACandle;
-
   const barUpdateMode: Spock.BarUpdateMode;
 
   /**

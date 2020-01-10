@@ -132,7 +132,26 @@ declare namespace Plot {
   /**
    * @deprecated
    */
-  function addSymbol(p1: QPointF, size: QSize, style: Spock.SymbolStyle, brush: QBrush, pen: QPen, id: string): void;
+  interface SymbolOpt {
+    style: Spock.SymbolStyle;
+    brush?: QBrush;
+    pen?: QPen;
+    size: QSizeF;
+  }
+
+  /**
+   * @deprecated
+   */
+  interface AddSymbolOpt {
+    id: string;
+    pos: QPointF;
+    symbol: SymbolOpt;
+  }
+
+  /**
+   * @deprecated
+   */
+  function addSymbol(options: AddSymbolOpt): void;
 
   /**
    * @deprecated

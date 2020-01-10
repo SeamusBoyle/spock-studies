@@ -11,6 +11,41 @@ declare namespace Spock {
   enum ArrowsPoint { To = 1, From = 2 }
   enum RequiredSource { Tick = 1, Bar = 2 }
   enum BarUpdateMode { AllBars = 1, NewBars = 2, LastBar = 3 }
+  enum FillStyle {
+    None = 1,
+    Solid = 2,
+    Dense1 = 3,
+    Dense2 = 4,
+    Dense3 = 5,
+    Dense4 = 6,
+    Dense5 = 7,
+    Dense6 = 8,
+    Dense7 = 9,
+    Hor = 10,
+    Ver = 11,
+    Cross = 12,
+    BDiag = 13,
+    FDiag = 14,
+    DiagCross = 15
+  }
+  enum SymbolStyle {
+    None = 1,
+    Ellipse = 2,
+    Rect = 3,
+    Diamond = 4,
+    Triangle = 5,
+    DTriangle = 6,
+    UTriangle = 7,
+    LTriangle = 8,
+    RTriangle = 9,
+    Cross = 10,
+    XCross = 11,
+    HLine = 12,
+    VLine = 13,
+    Star1 = 14,
+    Star2 = 15,
+    Hexagon = 16
+  }
 
   interface Ohlc {
     open: number;

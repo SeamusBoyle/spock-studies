@@ -75,12 +75,12 @@ declare namespace Plot {
   /**
    * @deprecated
    */
-  function newPen(width: number, style: Qt.PenStyle, color: string): QPen;
+  function newPen(width: number, style: Spock.LineStyle, color: string): QPen;
 
   /**
    * @deprecated
    */
-  function newBrush(color: string, style: Qt.BrushStyle): QBrush;
+  function newBrush(color: string, style: Spock.FillStyle): QBrush;
 
   /**
    * @deprecated
@@ -115,7 +115,7 @@ declare namespace Plot {
   /**
    * @deprecated
    */
-  function addSymbol(p1: QPointF, size: QSize, style: number, brush: QBrush, pen: QPen, id: string): void;
+  function addSymbol(p1: QPointF, size: QSize, style: Spock.SymbolStyle, brush: QBrush, pen: QPen, id: string): void;
 
   /**
    * @deprecated

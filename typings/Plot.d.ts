@@ -127,7 +127,16 @@ declare namespace Plot {
   /**
    * @deprecated
    */
-  function addLine(line: QLineF, pen: QPen, id: string): void;
+  interface AddLineOpt {
+    id: string;
+    line: QLineF;
+    pen?: QPen;
+  }
+
+  /**
+   * @deprecated
+   */
+  function addLine(options: AddLineOpt): void;
 
   /**
    * @deprecated

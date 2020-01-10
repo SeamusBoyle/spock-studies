@@ -132,12 +132,32 @@ declare namespace Plot {
   /**
    * @deprecated
    */
-  function addRect(rect: QRectF, pen: QPen, brush: QBrush, id: string): void;
+  interface AddRectOpt {
+    id: string;
+    rect: QRectF;
+    pen?: QPen;
+    brush?: QBrush;
+  }
 
   /**
    * @deprecated
    */
-  function addEllipse(rect: QRectF, pen: QPen, brush: QBrush, id: string): void;
+  function addRect(options: AddRectOpt): void;
+
+  /**
+   * @deprecated
+   */
+  interface AddEllipseOpt {
+    id: string;
+    rect: QRectF;
+    pen?: QPen;
+    brush?: QBrush;
+  }
+
+  /**
+   * @deprecated
+   */
+  function addEllipse(options: AddEllipseOpt): void;
 
   /**
    * @deprecated

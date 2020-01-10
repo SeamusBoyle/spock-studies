@@ -102,7 +102,17 @@ declare namespace Plot {
   /**
    * @deprecated
    */
-  function newFont(family: string, pointSize?: number, weight?: number, italic?: boolean): QFont;
+  interface FontOpt {
+    family?: string;
+    pointSize?: number;
+    weight?: number;
+    italic?: boolean;
+  }
+
+  /**
+   * @deprecated
+   */
+  function newFont(options?: FontOpt): QFont;
 
   /**
    * @deprecated

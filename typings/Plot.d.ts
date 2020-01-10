@@ -60,7 +60,22 @@ declare namespace Plot {
   /**
    * @deprecated
    */
+  function newLine(pt1: QPointF, pt2: QPointF): QLineF;
+
+  /**
+   * @deprecated
+   */
   function newLine(x1: number, y1: number, x2: number, y2: number): QLineF;
+
+  /**
+   * @deprecated
+   */
+  function newRect(topLeft: QPointF, size: QSizeF): QRectF;
+
+  /**
+   * @deprecated
+   */
+  function newRect(topLeft: QPointF, bottomRight: QPointF): QRectF;
 
   /**
    * @deprecated

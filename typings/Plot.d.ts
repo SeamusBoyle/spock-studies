@@ -75,12 +75,29 @@ declare namespace Plot {
   /**
    * @deprecated
    */
-  function newPen(width: number, style: Spock.LineStyle, color: string): QPen;
+  interface PenOpt {
+    color?: Spock.color;
+    width?: number;
+    style?: Spock.LineStyle;
+  }
 
   /**
    * @deprecated
    */
-  function newBrush(color: string, style: Spock.FillStyle): QBrush;
+  function newPen(options?: PenOpt): QPen;
+
+  /**
+   * @deprecated
+   */
+  interface BrushOpt {
+    color?: Spock.color;
+    style?: Spock.FillStyle;
+  }
+
+  /**
+   * @deprecated
+   */
+  function newBrush(options?: BrushOpt): QBrush;
 
   /**
    * @deprecated

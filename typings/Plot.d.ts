@@ -166,12 +166,36 @@ declare namespace Plot {
   /**
    * @deprecated
    */
-  function addText(p1: QPointF, text: string, font: QFont, pen: QPen, brush: QBrush, id: string): void;
+  interface AddTextOpt {
+    id: string;
+    pos: QPointF;
+    text: string;
+    font?: QFont;
+    pen?: QPen;
+    brush?: QBrush;
+  }
 
   /**
    * @deprecated
    */
-  function addLabel(p1: QPointF, text: string, font: QFont, pen: QPen, brush: QBrush, id: string): void;
+  function addText(options: AddTextOpt): void;
+
+  /**
+   * @deprecated
+   */
+  interface AddLabelOpt {
+    id: string;
+    pos: QPointF;
+    text: string;
+    font?: QFont;
+    pen?: QPen;
+    brush?: QBrush;
+  }
+
+  /**
+   * @deprecated
+   */
+  function addLabel(options: AddLabelOpt): void;
 
   function alertMessage(message: string): void;
 

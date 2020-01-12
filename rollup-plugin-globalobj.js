@@ -20,7 +20,7 @@ export default function globalObj(options = {}) {
       const regex = /^(export default (?!obj[^\w])(\w+)[;]?)$/gm;
       // TODO(seamus): Remove call to noop noop function
       // it's a workaround so rollup doesn't generate an empty file
-      const subst = 'var obj = new $2(); noop(obj); // $1';
+      const subst = 'var obj = new $2(); if (Math.noop !== undefined) Math.noop(obj !== undefined); // $1';
       let generatedCode = code.replace(regex, subst);
 
       // comment all other exports (starting in column 0)

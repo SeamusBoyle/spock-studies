@@ -118,14 +118,23 @@ declare namespace Spock {
   /**
    * @private
    */
-  interface ParameterBase<T> {
+  interface UndefinedTypeParameter<T> {
     name: string;
-    type?: ParameterType;
     defaultValue: T;
     readonly value?: T;
   }
 
-  type IntParameter = ParameterBase<number>;
+  /**
+   * @private
+   */
+  interface ParameterBase<T> {
+    name: string;
+    type: ParameterType;
+    defaultValue: T;
+    readonly value?: T;
+  }
+
+  type IntParameter = ParameterBase<number> | UndefinedTypeParameter<number>;
   type DoubleParameter = ParameterBase<number>;
   type StringParameter = ParameterBase<string>;
   type ColorParameter = ParameterBase<color>;

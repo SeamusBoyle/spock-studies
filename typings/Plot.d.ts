@@ -262,6 +262,11 @@ declare namespace Plot {
   function alertMessage(message: string): void;
 
   /**
+   * @deprecated
+   */
+  const displayDigits: number;
+
+  /**
    * @private @deprecated
    */
   function replot(): void;

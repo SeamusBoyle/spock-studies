@@ -267,6 +267,11 @@ declare namespace Plot {
   const displayDigits: number;
 
   /**
+   * @deprecated
+   */
+  function toLocaleDecimalString(num: number, digits: number): string;
+
+  /**
    * @private @deprecated
    */
   function replot(): void;

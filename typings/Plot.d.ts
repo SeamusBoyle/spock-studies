@@ -58,7 +58,7 @@ declare namespace Plot {
   function newPoint(x: number, y: number): QPointF;
 
   /**
-   * @deprecated
+   * @deprecated @experimental
    */
   function newLine(pt1: QPointF, pt2: QPointF): QLineF;
 
@@ -68,12 +68,12 @@ declare namespace Plot {
   function newLine(x1: number, y1: number, x2: number, y2: number): QLineF;
 
   /**
-   * @deprecated
+   * @deprecated @experimental
    */
   function newRect(topLeft: QPointF, size: QSizeF): QRectF;
 
   /**
-   * @deprecated
+   * @deprecated @experimental
    */
   function newRect(topLeft: QPointF, bottomRight: QPointF): QRectF;
 
@@ -88,7 +88,7 @@ declare namespace Plot {
   function newSize(w: number, h: number): QSizeF;
 
   /**
-   * @deprecated
+   * @deprecated @experimental
    */
   interface PenOpt {
     color?: Spock.color;
@@ -97,12 +97,12 @@ declare namespace Plot {
   }
 
   /**
-   * @deprecated
+   * @deprecated @experimental
    */
   function newPen(options?: PenOpt): QPen;
 
   /**
-   * @deprecated
+   * @deprecated @experimental
    */
   interface BrushOpt {
     color?: Spock.color;
@@ -110,12 +110,12 @@ declare namespace Plot {
   }
 
   /**
-   * @deprecated
+   * @deprecated @experimental
    */
   function newBrush(options?: BrushOpt): QBrush;
 
   /**
-   * @deprecated
+   * @deprecated @experimental
    */
   interface FontOpt {
     family?: string;
@@ -125,12 +125,12 @@ declare namespace Plot {
   }
 
   /**
-   * @deprecated
+   * @deprecated @experimental
    */
   function newFont(options?: FontOpt): QFont;
 
   /**
-   * @deprecated
+   * @deprecated @experimental
    */
   interface AddHLineOpt {
     id: string;
@@ -139,12 +139,12 @@ declare namespace Plot {
   }
 
   /**
-   * @deprecated
+   * @deprecated @experimental
    */
   function addHLine(options: AddHLineOpt): void;
 
   /**
-   * @deprecated
+   * @deprecated @experimental
    */
   interface AddVLineOpt {
     id: string;
@@ -153,12 +153,12 @@ declare namespace Plot {
   }
 
   /**
-   * @deprecated
+   * @deprecated @experimental
    */
   function addVLine(options: AddVLineOpt): void;
 
   /**
-   * @deprecated
+   * @deprecated @experimental
    */
   interface AddLineOpt {
     id: string;
@@ -167,12 +167,12 @@ declare namespace Plot {
   }
 
   /**
-   * @deprecated
+   * @deprecated @experimental
    */
   function addLine(options: AddLineOpt): void;
 
   /**
-   * @deprecated
+   * @deprecated @experimental
    */
   interface AddRectOpt {
     id: string;
@@ -182,12 +182,12 @@ declare namespace Plot {
   }
 
   /**
-   * @deprecated
+   * @deprecated @experimental
    */
   function addRect(options: AddRectOpt): void;
 
   /**
-   * @deprecated
+   * @deprecated @experimental
    */
   interface AddEllipseOpt {
     id: string;
@@ -197,12 +197,12 @@ declare namespace Plot {
   }
 
   /**
-   * @deprecated
+   * @deprecated @experimental
    */
   function addEllipse(options: AddEllipseOpt): void;
 
   /**
-   * @deprecated
+   * @deprecated @experimental
    */
   interface SymbolOpt {
     style: Spock.SymbolStyle;
@@ -212,7 +212,7 @@ declare namespace Plot {
   }
 
   /**
-   * @deprecated
+   * @deprecated @experimental
    */
   interface AddSymbolOpt {
     id: string;
@@ -221,12 +221,12 @@ declare namespace Plot {
   }
 
   /**
-   * @deprecated
+   * @deprecated @experimental
    */
   function addSymbol(options: AddSymbolOpt): void;
 
   /**
-   * @deprecated
+   * @deprecated @experimental
    */
   interface AddTextOpt {
     id: string;
@@ -238,12 +238,12 @@ declare namespace Plot {
   }
 
   /**
-   * @deprecated
+   * @deprecated @experimental
    */
   function addText(options: AddTextOpt): void;
 
   /**
-   * @deprecated
+   * @deprecated @experimental
    */
   interface AddLabelOpt {
     id: string;
@@ -255,19 +255,19 @@ declare namespace Plot {
   }
 
   /**
-   * @deprecated
+   * @deprecated @experimental
    */
   function addLabel(options: AddLabelOpt): void;
 
   function alertMessage(message: string): void;
 
   /**
-   * @deprecated
+   * @deprecated @experimental
    */
   const displayDigits: number;
 
   /**
-   * @deprecated
+   * @deprecated @experimental
    */
   function toLocaleDecimalString(num: number, digits: number): string;
 

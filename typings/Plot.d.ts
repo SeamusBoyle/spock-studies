@@ -185,6 +185,7 @@ declare namespace Plot {
     interface Text extends Item {
       pos: QPointF;
       text: string;
+      color: QColor;
     }
 
     /**
@@ -193,6 +194,7 @@ declare namespace Plot {
     interface Label extends Item {
       pos: QPointF;
       text: string;
+      color: QColor;
     }
   }
 

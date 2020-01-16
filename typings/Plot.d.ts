@@ -295,7 +295,7 @@ declare namespace Plot {
     pos?: QPointF;
     text?: string;
     font?: QFont;
-    pen?: QPen;
+    color?: Spock.color;
     brush?: QBrush;
   }
 
@@ -311,7 +311,7 @@ declare namespace Plot {
     pos?: QPointF;
     text?: string;
     font?: QFont;
-    pen?: QPen;
+    color?: Spock.color;
     brush?: QBrush;
   }
 

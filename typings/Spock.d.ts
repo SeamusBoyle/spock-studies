@@ -159,7 +159,7 @@ declare namespace Spock {
     axisMin?: number;
     axisMax?: number;
     info?: () => void;
-    exec: (period: number) => number[];
+    exec: (period: number) => number[] | void;
     // HTML string
     help?: () => string;
   }

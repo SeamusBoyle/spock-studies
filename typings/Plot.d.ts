@@ -129,54 +129,117 @@ declare namespace Plot {
    */
   function newFont(options?: FontOpt): QFont;
 
+  namespace Drawing {
+    /**
+     * @deprecated @experimental
+     */
+    interface Item {
+      visible: boolean;
+    }
+
+    /**
+     * @deprecated @experimental
+     */
+    interface HLine extends Item {
+      y: number;
+    }
+
+    /**
+     * @deprecated @experimental
+     */
+    interface VLine extends Item {
+      x: number;
+    }
+
+    /**
+     * @deprecated @experimental
+     */
+    interface Line extends Item {
+      line: QLineF;
+    }
+
+    /**
+     * @deprecated @experimental
+     */
+    interface Rect extends Item {
+      rect: QRectF;
+    }
+
+    /**
+     * @deprecated @experimental
+     */
+    interface Ellipse extends Item {
+      rect: QRectF;
+    }
+
+    /**
+     * @deprecated @experimental
+     */
+    interface Symbol extends Item {
+      pos: QPointF;
+    }
+
+    /**
+     * @deprecated @experimental
+     */
+    interface Text extends Item {
+      pos: QPointF;
+      text: string;
+    }
+
+    /**
+     * @deprecated @experimental
+     */
+    interface Label extends Item {
+      pos: QPointF;
+      text: string;
+    }
+  }
+
   /**
    * @deprecated @experimental
    */
-  interface AddHLineOpt {
-    id: string;
-    y: number;
+  interface MakeHLineOptions {
+    y?: number;
     pen?: QPen;
   }
 
   /**
    * @deprecated @experimental
    */
-  function addHLine(options: AddHLineOpt): void;
+  function makeHLine(options?: MakeHLineOptions): Drawing.HLine;
 
   /**
    * @deprecated @experimental
    */
-  interface AddVLineOpt {
-    id: string;
-    x: number;
+  interface MakeVLineOptions {
+    x?: number;
     pen?: QPen;
   }
 
   /**
    * @deprecated @experimental
    */
-  function addVLine(options: AddVLineOpt): void;
+  function makeVLine(options?: MakeVLineOptions): Drawing.VLine;
 
   /**
    * @deprecated @experimental
    */
-  interface AddLineOpt {
-    id: string;
-    line: QLineF;
+  interface MakeLineOptions {
+    line?: QLineF;
     pen?: QPen;
   }
 
   /**
    * @deprecated @experimental
    */
-  function addLine(options: AddLineOpt): void;
+  function makeLine(options?: MakeLineOptions): Drawing.Line;
 
   /**
    * @deprecated @experimental
    */
-  interface AddRectOpt {
-    id: string;
-    rect: QRectF;
+  interface MakeRectOptions {
+    rect?: QRectF;
     pen?: QPen;
     brush?: QBrush;
   }
@@ -184,14 +247,13 @@ declare namespace Plot {
   /**
    * @deprecated @experimental
    */
-  function addRect(options: AddRectOpt): void;
+  function makeRect(options?: MakeRectOptions): Drawing.Rect;
 
   /**
    * @deprecated @experimental
    */
-  interface AddEllipseOpt {
-    id: string;
-    rect: QRectF;
+  interface MakeEllipseOptions {
+    rect?: QRectF;
     pen?: QPen;
     brush?: QBrush;
   }
@@ -199,39 +261,37 @@ declare namespace Plot {
   /**
    * @deprecated @experimental
    */
-  function addEllipse(options: AddEllipseOpt): void;
+  function makeEllipse(options?: MakeEllipseOptions): Drawing.Ellipse;
 
   /**
    * @deprecated @experimental
    */
-  interface SymbolOpt {
-    style: Spock.SymbolStyle;
+  interface SymbolOptions {
+    style?: Spock.SymbolStyle;
     brush?: QBrush;
     pen?: QPen;
-    size: QSizeF;
+    size?: QSizeF;
   }
 
   /**
    * @deprecated @experimental
    */
-  interface AddSymbolOpt {
-    id: string;
-    pos: QPointF;
-    symbol: SymbolOpt;
+  interface MakeSymbolOptions {
+    pos?: QPointF;
+    symbol?: SymbolOptions;
   }
 
   /**
    * @deprecated @experimental
    */
-  function addSymbol(options: AddSymbolOpt): void;
+  function makeSymbol(options?: MakeSymbolOptions): Drawing.Symbol;
 
   /**
    * @deprecated @experimental
    */
-  interface AddTextOpt {
-    id: string;
-    pos: QPointF;
-    text: string;
+  interface MakeTextOptions {
+    pos?: QPointF;
+    text?: string;
     font?: QFont;
     pen?: QPen;
     brush?: QBrush;
@@ -240,15 +300,14 @@ declare namespace Plot {
   /**
    * @deprecated @experimental
    */
-  function addText(options: AddTextOpt): void;
+  function makeText(options?: MakeTextOptions): Drawing.Text;
 
   /**
    * @deprecated @experimental
    */
-  interface AddLabelOpt {
-    id: string;
-    pos: QPointF;
-    text: string;
+  interface MakeLabelOptions {
+    pos?: QPointF;
+    text?: string;
     font?: QFont;
     pen?: QPen;
     brush?: QBrush;
@@ -257,7 +316,7 @@ declare namespace Plot {
   /**
    * @deprecated @experimental
    */
-  function addLabel(options: AddLabelOpt): void;
+  function makeLabel(options?: MakeLabelOptions): Drawing.Label;
 
   function alertMessage(message: string): void;
 
@@ -275,11 +334,6 @@ declare namespace Plot {
    * @private @deprecated
    */
   function replot(): void;
-
-  /**
-   * @deprecated
-   */
-  function removeDrawing(id: string): void;
 
   /**
    * @deprecated

@@ -10,7 +10,8 @@ export default class Indicator implements Spock.Indicator {
   private downtrendStop: number;
   private period: number;
   private symbolOffset: number;
-  private symbol: Plot.SymbolOpt;
+  private upSymbol: Plot.Drawing.Symbol;
+  private downSymbol: Plot.Drawing.Symbol;
 
   constructor() {
     this.name = 'DeMarkSL';
@@ -28,12 +29,15 @@ export default class Indicator implements Spock.Indicator {
     const color = Plot.newColor('red');
     const symbolWidth = 22;
     const width = 2;
-    this.symbol = {
+    const symbol: Plot.SymbolOptions = {
       size: Plot.newSize(symbolWidth, symbolWidth),
       style: Spock.SymbolStyle.HLine,
       brush: Plot.newBrush({ color }),
       pen: Plot.newPen({ width, color })
     };
+
+    this.upSymbol = Plot.makeSymbol({ symbol });
+    this.downSymbol = Plot.makeSymbol({ symbol });
   };
 
   exec = (period: number): number[] => {
@@ -50,20 +54,12 @@ export default class Indicator implements Spock.Indicator {
     const downtrendStop = currentMax - (Math.max(currentMin, prevClose) - currentMax);
 
     if (this.period !== period || !qFuzzyCompare(this.uptrendStop, uptrendStop)) {
-      Plot.addSymbol({
-        pos: Plot.newPoint(period + this.symbolOffset, uptrendStop),
-        symbol: this.symbol,
-        id: 'u'
-      });
+      this.upSymbol.pos = Plot.newPoint(period + this.symbolOffset, uptrendStop);
       this.uptrendStop = uptrendStop;
     }
 
     if (this.period !== period || !qFuzzyCompare(this.downtrendStop, downtrendStop)) {
-      Plot.addSymbol({
-        pos: Plot.newPoint(period + this.symbolOffset, downtrendStop),
-        symbol: this.symbol,
-        id: 'd'
-      });
+      this.downSymbol.pos = Plot.newPoint(period + this.symbolOffset, downtrendStop);
       this.downtrendStop = downtrendStop;
     }
 

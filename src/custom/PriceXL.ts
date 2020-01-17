@@ -27,7 +27,8 @@ export default class Indicator implements Spock.Indicator {
     this.upColor = Plot.newColor('#0b893e');
     this.downColor = Plot.newColor('#bf1722');
     this.priceLabel = Plot.makeLabel({
-      pos: Plot.newPoint(20, 50),
+      horizontalAlignment: Spock.Alignment.Top,
+      verticalAlignment: Spock.Alignment.Left,
       font: Plot.newFont({ family: 'Monospace', pointSize: 36 }),
       color: this.upColor,
       brush: Plot.newBrush({ color: 'transparent' })

@@ -192,6 +192,8 @@ declare namespace Plot {
      * @deprecated @experimental
      */
     interface Label extends Item {
+      horizontalAlignment: Spock.Alignment;
+      verticalAlignment: Spock.Alignment;
       pos: QPointF;
       text: string;
       color: QColor;
@@ -308,6 +310,8 @@ declare namespace Plot {
    * @deprecated @experimental
    */
   interface MakeLabelOptions {
+    horizontalAlignment?: Spock.Alignment;
+    verticalAlignment?: Spock.Alignment;
     pos?: QPointF;
     text?: string;
     font?: QFont;

@@ -197,6 +197,7 @@ declare namespace Plot {
       pos: QPointF;
       text: string;
       color: QColor;
+      margin: number;
     }
   }
 
@@ -317,6 +318,7 @@ declare namespace Plot {
     font?: QFont;
     color?: Spock.color;
     brush?: QBrush;
+    margin?: number;
   }
 
   /**

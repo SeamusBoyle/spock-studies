@@ -31,7 +31,8 @@ export default class Indicator implements Spock.Indicator {
       verticalAlignment: Spock.Alignment.Left,
       font: Plot.newFont({ family: 'Monospace', pointSize: 36 }),
       color: this.upColor,
-      brush: Plot.newBrush({ color: 'transparent' })
+      brush: Plot.newBrush({ color: 'transparent' }),
+      margin: 10
     });
   };
 

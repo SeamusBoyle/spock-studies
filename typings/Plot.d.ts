@@ -198,6 +198,8 @@ declare namespace Plot {
       text: string;
       color: QColor;
       margin: number;
+      borderRadius: number;
+      borderPen: QPen;
     }
   }
 

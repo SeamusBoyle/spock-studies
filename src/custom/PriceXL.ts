@@ -9,6 +9,8 @@ export default class Indicator implements Spock.Indicator {
   private priceLabel: Plot.Drawing.Label;
   private upColor: QColor;
   private downColor: QColor;
+  private upBorderPen: QPen;
+  private downBorderPen: QPen;
   private oldLatest: number;
   private oldWasUp: boolean;
 
@@ -26,6 +28,8 @@ export default class Indicator implements Spock.Indicator {
     this.oldWasUp = true;
     this.upColor = Plot.newColor('#0b893e');
     this.downColor = Plot.newColor('#bf1722');
+    this.upBorderPen = Plot.newPen({ color: this.upColor, width: 3 });
+    this.downBorderPen = Plot.newPen({ color: this.downColor, width: 3 });
     this.priceLabel = Plot.makeLabel({
       horizontalAlignment: Spock.Alignment.Top,
       verticalAlignment: Spock.Alignment.Left,
@@ -34,6 +38,8 @@ export default class Indicator implements Spock.Indicator {
       brush: Plot.newBrush({ color: 'transparent' }),
       margin: 10
     });
+    this.priceLabel.borderRadius = 8;
+    this.priceLabel.borderPen = this.upBorderPen;
   };
 
   exec = (period: number): void => {
@@ -46,7 +52,13 @@ export default class Indicator implements Spock.Indicator {
       const isUp = latest >= this.oldLatest;
       this.priceLabel.text = `${isUp ? '▲' : '▼'} ${Plot.toLocaleDecimalString(latest, Plot.displayDigits)}`;
       if (this.oldWasUp !== isUp) {
-        this.priceLabel.color = isUp ? this.upColor : this.downColor;
+        if (isUp) {
+          this.priceLabel.color = this.upColor;
+          this.priceLabel.borderPen = this.upBorderPen;
+        } else {
+          this.priceLabel.color = this.downColor;
+          this.priceLabel.borderPen = this.downBorderPen;
+        }
         this.oldWasUp = isUp;
       }
     }

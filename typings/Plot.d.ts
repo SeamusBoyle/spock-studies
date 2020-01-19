@@ -328,6 +328,39 @@ declare namespace Plot {
    */
   function makeLabel(options?: MakeLabelOptions): Drawing.Label;
 
+  /**
+   * @deprecated @experimental
+   */
+  function transformX(x: number): number;
+  /**
+   * @deprecated @experimental
+   */
+  function transformY(y: number): number;
+  /**
+   * @deprecated @experimental
+   */
+  function invTransformX(x: number): number;
+  /**
+   * @deprecated @experimental
+   */
+  function invTransformY(y: number): number;
+  /**
+   * @deprecated @experimental
+   */
+  function transform(pos: QPointF): QPointF;
+  /**
+   * @deprecated @experimental
+   */
+  function transform(rect: QRectF): QRectF;
+  /**
+   * @deprecated @experimental
+   */
+  function invTransform(pos: QPointF): QPointF;
+  /**
+   * @deprecated @experimental
+   */
+  function invTransform(rect: QRectF): QRectF;
+
   function alertMessage(message: string): void;
 
   /**

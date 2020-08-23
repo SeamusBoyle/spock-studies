@@ -87,6 +87,16 @@ obj.exec = function (period) {
     const lowestLowBarIdx = lowestLowIdx + period - lookback
     const highestHighBarIdx = highestHighIdx + period - lookback
 
+    // only update drawings if hi/lo changed
+    if (lowestLowBarIdx === obj._lowestLowBarIdx && highestHighBarIdx === obj._highestHighBarIdx
+        && lowestLow === obj._lowestLow && highestHigh === obj._highestHigh)
+        return
+    obj._lowestLowBarIdx = lowestLowBarIdx
+    obj._highestHighBarIdx = highestHighBarIdx
+    obj._lowestLow = lowestLow
+    obj._highestHigh = highestHigh
+
+
     // drawing the lookbacks used as vline
     // used for debugging the lookback adjustments
     if (obj._showLookbackLines) {

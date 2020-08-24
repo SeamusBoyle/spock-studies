@@ -45,8 +45,8 @@ obj.exec = function (period) {
     let lowestLow = Math.min(...lows)
     let highestHigh = Math.max(...highs)
 
-    let lowestLowIdx = lows.indexOf(lowestLow)
-    let highestHighIdx = highs.indexOf(highestHigh)
+    let lowestLowIdx = lows.indexOf(lowestLow) + 1
+    let highestHighIdx = highs.indexOf(highestHigh) + 1
 
     // increase the lookback if the low or high is near the start in the original lookback
     // FIXME(seamus): This only adjusts backwards, it may make sense to adjust
@@ -72,8 +72,8 @@ obj.exec = function (period) {
                 lowestLow = Math.min(...lows)
                 highestHigh = Math.max(...highs)
 
-                lowestLowIdx = lows.indexOf(lowestLow)
-                highestHighIdx = highs.indexOf(highestHigh)
+                lowestLowIdx = lows.indexOf(lowestLow) + 1
+                highestHighIdx = highs.indexOf(highestHigh) + 1
 
                 if (lowestLowIdx >= swingPadding && highestHighIdx >= swingPadding)
                     break

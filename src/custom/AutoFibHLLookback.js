@@ -167,8 +167,8 @@ obj.exec = function (period) {
         }
 
         const l = direction === -1 ? highestHighBarIdx : lowestLowBarIdx
-        const b = lowestLow
-        const h = lowestLow - highestHigh
+        const b = direction === -1 ? lowestLow : highestHigh
+        const h = direction === -1 ? lowestLow - highestHigh : highestHigh - lowestLow
 
         for (let i = 0, count = obj._fibPctLevels.length; i < count; i += 1) {
             const fl = b - (h * obj._fibPctLevels[i])

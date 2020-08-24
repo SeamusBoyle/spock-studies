@@ -11,7 +11,7 @@ obj.info = function () {
     }
     obj._showLookbackLines = {
         name: 'showLookbackLines',
-        defaultValue: true,
+        defaultValue: false,
         type: Spock.ParameterType.Bool
     }
     obj._enableAutoLookbackAdjustments = {

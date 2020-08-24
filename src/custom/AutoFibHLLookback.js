@@ -99,7 +99,7 @@ obj.exec = function (period) {
 
     // drawing the lookbacks used as vline
     // used for debugging the lookback adjustments
-    if (obj._showLookbackLines) {
+    if (obj._showLookbackLines.value) {
         // the original lookback
         const origLookback = obj._lookback.value
         if (!obj.vline1) {

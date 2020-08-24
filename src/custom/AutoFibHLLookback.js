@@ -30,9 +30,9 @@ obj.info = function () {
 
 obj.exec = function (period) {
     if (Plot.barUpdateMode === Spock.BarUpdateMode.AllBars) {
-        obj._fibPctLevels = [0.382, 0.5, 0.618]
-        obj._fibColors = ["mediumslateblue", "mediumspringgreen", "mediumvioletred"]
-        obj._fibWidths = [2, 3, 2]
+        obj._fibPctLevels = [0.236, 0.382, 0.618, 0.786, 1.272, 1.414, 1.618]
+        obj._fibColors = ["ForestGreen", "ForestGreen", "ForestGreen", "ForestGreen", "ForestGreen", "ForestGreen", "ForestGreen"]
+        obj._fibWidths = [1, 1, 1, 1, 1, 1, 1]
     }
     let lookback = obj._lookback.value;
     if (period < lookback)

@@ -11,7 +11,7 @@ obj.info = function () {
     }
     obj._showLookbackLines = {
         name: 'showLookbackLines',
-        defaultValue: false,
+        defaultValue: true,
         type: Spock.ParameterType.Bool
     }
     obj._enableAutoLookbackAdjustments = {
@@ -30,10 +30,9 @@ obj.info = function () {
 
 obj.exec = function (period) {
     if (Plot.barUpdateMode === Spock.BarUpdateMode.AllBars) {
-        obj._fibPctLevels = [0.236, 0.382, 0.618, 0.786, 1.272, 1.414, 1.618]
-        //obj._fibColors = ["mediumslateblue", "mediumspringgreen", "mediumvioletred"]
-        obj._fibColors = ["ForestGreen", "ForestGreen", "ForestGreen", "ForestGreen", "ForestGreen", "ForestGreen", "ForestGreen"]
-        obj._fibWidths = [1, 1, 1, 1]
+        obj._fibPctLevels = [0.382, 0.5, 0.618]
+        obj._fibColors = ["mediumslateblue", "mediumspringgreen", "mediumvioletred"]
+        obj._fibWidths = [2, 3, 2]
     }
     let lookback = obj._lookback.value;
     if (period < lookback)
@@ -46,8 +45,8 @@ obj.exec = function (period) {
     let lowestLow = Math.min(...lows)
     let highestHigh = Math.max(...highs)
 
-    let lowestLowIdx = lows.indexOf(lowestLow)+1
-    let highestHighIdx = highs.indexOf(highestHigh)+1
+    let lowestLowIdx = lows.indexOf(lowestLow)
+    let highestHighIdx = highs.indexOf(highestHigh)
 
     // increase the lookback if the low or high is near the start in the original lookback
     // FIXME(seamus): This only adjusts backwards, it may make sense to adjust
@@ -73,8 +72,8 @@ obj.exec = function (period) {
                 lowestLow = Math.min(...lows)
                 highestHigh = Math.max(...highs)
 
-                lowestLowIdx = lows.indexOf(lowestLow)+1
-                highestHighIdx = highs.indexOf(highestHigh)+1
+                lowestLowIdx = lows.indexOf(lowestLow)
+                highestHighIdx = highs.indexOf(highestHigh)
 
                 if (lowestLowIdx >= swingPadding && highestHighIdx >= swingPadding)
                     break
@@ -100,7 +99,7 @@ obj.exec = function (period) {
 
     // drawing the lookbacks used as vline
     // used for debugging the lookback adjustments
-    if (obj._showLookbackLines.value) {
+    if (obj._showLookbackLines) {
         // the original lookback
         const origLookback = obj._lookback.value
         if (!obj.vline1) {
@@ -168,8 +167,8 @@ obj.exec = function (period) {
         }
 
         const l = direction === -1 ? highestHighBarIdx : lowestLowBarIdx
-        const b = direction === -1 ? lowestLow : highestHigh
-        const h = direction === -1 ? lowestLow - highestHigh : highestHigh - lowestLow
+        const b = lowestLow
+        const h = lowestLow - highestHigh
 
         for (let i = 0, count = obj._fibPctLevels.length; i < count; i += 1) {
             const fl = b - (h * obj._fibPctLevels[i])

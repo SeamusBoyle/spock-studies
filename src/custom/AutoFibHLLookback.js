@@ -31,8 +31,9 @@ obj.info = function () {
 obj.exec = function (period) {
     if (Plot.barUpdateMode === Spock.BarUpdateMode.AllBars) {
         obj._fibPctLevels = [0.236, 0.382, 0.618, 0.786, 1.272, 1.414, 1.618]
+        //obj._fibColors = ["mediumslateblue", "mediumspringgreen", "mediumvioletred"]
         obj._fibColors = ["ForestGreen", "ForestGreen", "ForestGreen", "ForestGreen", "ForestGreen", "ForestGreen", "ForestGreen"]
-        obj._fibWidths = [1, 1, 1, 1, 1, 1, 1]
+        obj._fibWidths = [1, 1, 1, 1]
     }
     let lookback = obj._lookback.value;
     if (period < lookback)
@@ -45,8 +46,8 @@ obj.exec = function (period) {
     let lowestLow = Math.min(...lows)
     let highestHigh = Math.max(...highs)
 
-    let lowestLowIdx = lows.indexOf(lowestLow) + 1
-    let highestHighIdx = highs.indexOf(highestHigh) + 1
+    let lowestLowIdx = lows.indexOf(lowestLow)+1
+    let highestHighIdx = highs.indexOf(highestHigh)+1
 
     // increase the lookback if the low or high is near the start in the original lookback
     // FIXME(seamus): This only adjusts backwards, it may make sense to adjust
@@ -72,8 +73,8 @@ obj.exec = function (period) {
                 lowestLow = Math.min(...lows)
                 highestHigh = Math.max(...highs)
 
-                lowestLowIdx = lows.indexOf(lowestLow) + 1
-                highestHighIdx = highs.indexOf(highestHigh) + 1
+                lowestLowIdx = lows.indexOf(lowestLow)+1
+                highestHighIdx = highs.indexOf(highestHigh)+1
 
                 if (lowestLowIdx >= swingPadding && highestHighIdx >= swingPadding)
                     break

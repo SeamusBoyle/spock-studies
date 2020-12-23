@@ -1,4 +1,4 @@
-const obj = {
+var obj = {
   name: 'CASMA',
   summary: 'Crossover Arrow SMA',
   description: 'Plots an arrow based on an SMA crossover, ' +

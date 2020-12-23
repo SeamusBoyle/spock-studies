@@ -1,4 +1,4 @@
-const obj = {
+var obj = {
   name: 'SuperTrendC',
   summary: 'SuperTrend Candles',
   description: 'Color candlesticks based on SuperTrend'

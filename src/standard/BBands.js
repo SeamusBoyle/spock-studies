@@ -1,4 +1,4 @@
-const obj = {
+var obj = {
   name: 'BBands',
   summary: 'Bollinger Bands'
 };

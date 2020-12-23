@@ -1,4 +1,4 @@
-const obj = {
+var obj = {
   name: 'Volume',
   summary: 'Volume with SMA'
 };

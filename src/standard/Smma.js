@@ -1,4 +1,4 @@
-const obj = {
+var obj = {
   name: 'SMMA',
   summary: 'Smoothed Moving Average'
 };

@@ -1,4 +1,4 @@
-const obj = {
+var obj = {
   name: 'BW MFI',
   summary: 'Market Facilitation Index',
   description: 'Colors: green bar = green, fade bar = red, fake bar = gray, squat bar = blue'

@@ -1,4 +1,4 @@
-const obj = {
+var obj = {
   name: 'CCEMA',
   summary: 'Crossover Candle EMA',
   description: 'Color candlesticks based on EMA crossover'

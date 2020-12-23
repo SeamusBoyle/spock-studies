@@ -1,4 +1,4 @@
-const obj = {
+var obj = {
   name: 'StochRSI',
   summary: 'Stochastic RSI'
 };

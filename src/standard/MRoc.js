@@ -1,4 +1,4 @@
-const obj = {
+var obj = {
   name: 'MROC',
   summary: 'Multiple Rate-of-Change'
 };

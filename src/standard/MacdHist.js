@@ -1,4 +1,4 @@
-const obj = {
+var obj = {
   name: 'MACD-Hist',
   summary: 'MACD-Histogram'
 };

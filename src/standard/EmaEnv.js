@@ -1,4 +1,4 @@
-const obj = {
+var obj = {
   name: 'EmaEnv',
   summary: 'Exponential Moving Average Envelopes'
 };

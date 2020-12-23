@@ -1,4 +1,4 @@
-const obj = {
+var obj = {
   name: 'Ichimoku',
   summary: 'Ichimoku Kinko Hyo'
 };

@@ -1,4 +1,4 @@
-const obj = {
+var obj = {
   name: 'AC',
   summary: 'Accelerator Oscillator'
 };

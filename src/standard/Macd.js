@@ -1,4 +1,4 @@
-const obj = {
+var obj = {
   name: 'MACD',
   summary: 'Moving Average Convergence/Divergence'
 };
